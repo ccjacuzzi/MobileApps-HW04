@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.ualr.resources.databinding.ActivityMainBinding;
 
 // TODO 3: Define the alternative resources needed to have different content and look n feel depending on the device language.
 // TODO 4: Get the description string value from resources
@@ -14,10 +15,16 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
+    private ActivityMainBinding mBinding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        mBinding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(mBinding.getRoot());
+
+        this.mBinding.countryDescriptionText.setText(R.string.description);
     }
+
 
 }
