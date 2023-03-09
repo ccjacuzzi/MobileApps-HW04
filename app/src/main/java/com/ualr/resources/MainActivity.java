@@ -6,6 +6,8 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import android.os.Bundle;
 import android.view.View;
 
+import android.widget.Toast;
+
 import com.google.android.material.snackbar.Snackbar;
 import com.ualr.resources.databinding.ActivityMainBinding;
 
@@ -24,6 +26,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(mBinding.getRoot());
 
         this.mBinding.countryDescriptionText.setText(R.string.description);
+
+        this.mBinding.lessonLearntButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Congratulations. Now, enjoy your free time.", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
     }
 
 
