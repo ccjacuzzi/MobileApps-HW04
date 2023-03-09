@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 33
     defaultConfig {
         applicationId "com.ualr.resources"
         minSdkVersion 28
-        targetSdkVersion 29
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -16,6 +16,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    /*Added to access UI elements*/
+    buildFeatures{
+        viewBinding true;
+    }
 }
 
 dependencies {
@@ -25,5 +30,5 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test:runner:1.4.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'com.google.android.material:material:1.8.0'
 }
